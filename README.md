@@ -12,7 +12,7 @@
 - Explored dataframe using .info, .shape and .head() to get a general overview of the contents
 - Got the proportion of null values per column to get an idea of very empty columns.
 - Tried to check similarly named columns to see the differences amongst them.
-#### General impressions:Case_Number
+#### General impressions:
 - Two empty columns, which seem useless (unnamed)
 - 2 int variables - Rest of variables are mainly text
 - href_formula and href seem pretty similar
