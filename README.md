@@ -1,6 +1,6 @@
-![IronHack Logo](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_d5c5793015fec3be28a63c4fa3dd4d55.png)
+![Shark-Logo](https://pre00.deviantart.net/f068/th/pre/i/2018/240/7/e/shark_reading_a_good_book_by_thescholdrenclan-dclfar5.jpg)
 
-# Guided Project: Demonstration of Data Cleaning and Manipulation with Pandas
+# Guided Project with Pandas
 
 ## Overview
 
