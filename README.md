@@ -1,66 +1,159 @@
-![IronHack Logo](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_d5c5793015fec3be28a63c4fa3dd4d55.png)
+<img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100" align="right"/>
 
-# Guided Project: Demonstration of Data Cleaning and Manipulation with Pandas
 
-## Overview
+#   Project Pandas Ironhack Data Bootcamp
 
-The goal of this project is to combine everything you have learned about data wrangling, cleaning, and manipulation with Pandas so you can see how it all works together. For this project, you will start with this messy data set [Shark Attack](https://www.kaggle.com/teajay/global-shark-attacks/version/1). You will need to import it, use your data wrangling skills to clean it up, prepare it to be analyzed, and then export it as a clean CSV data file.
+Dinis Oliveira Costa
 
-**You will be working individually for this project**, but we'll be guiding you along the process and helping you as you go. Show us what you've got!
+*Data Part Time Barcelona Dic 2019*
 
----
 
-## Technical Requirements
+## Content
+- [Project Description](#project)
+- [Dataset](#dataset)
+- [Workflow](#workflow)
+- [Results](#results)
 
-The technical requirements for this project are as follows:
+<a name="project"></a>
 
-* The dataset that we provide you is a significantly messy data set. Apply the different cleaning and manipulation techniques you have learned.
-* Import the data using Pandas.
-* Examine the data for potential issues.
-* Use at least 8 of the cleaning and manipulation methods you have learned on the data.
-* Produce a Jupyter Notebook that shows the steps you took and the code you used to clean and transform your data set.
-* Export a clean CSV version of your data using Pandas.
+## Project Description
 
-## Necessary Deliverables
+Data cleaning is the process of detecting and correcting inaccurate records from a record set, table, or database and refers to identifying incomplete, incorrect or inaccurate parts of the data and then replacing, modifying, or deleting the dirty or coarse data.
 
-The following deliverables should be pushed to your Github repo for this chapter.
+It is important to be able to deal with messy data, whether that means missing values, inconsistent formatting, malformed records, or outliers.
 
-* **A cleaned CSV data file** containing the results of your data wrangling work.
-* **A Jupyter Notebook (data-wrangling.ipynb)** containing all Python code and commands used in the importing, cleaning, manipulation, and exporting of your data set.
-* **A ``README.md`` file** containing a detailed explanation of the process followed in the importing, cleaning, manipulation, and exporting of your data as well as your results, obstacles encountered, and lessons learned.
+The goal of this project is to practice the concepts of collecting, cleaning and preparing data for analysis and to get some hands-on experience working with Pandas and data sets.
 
-## Suggested Ways to Get Started
+The commands assume a basic understanding of the Pandas and NumPy libraries, including Panda’s DataFrame objects, common methods that can be applied to these objects, and familiarity with NumPy’s NaN values.
 
-* **Examine the data and try to understand what the fields mean** before diving into data cleaning and manipulation methods.
-* **Break the project down into different steps** - use the topics covered in the lessons to form a check list, add anything else you can think of that may be wrong with your data set, and then work through the check list.
-* **Use the tools in your tool kit** - your knowledge of Python, data structures, Pandas, and data wrangling.
-* **Work through the lessons in class** & ask questions when you need to! Think about adding relevant code to your project each night, instead of, you know... _procrastinating_.
-* **Commit early, commit often**, don’t be afraid of doing something incorrectly because you can always roll back to a previous version.
-* **Consult documentation and resources provided** to better understand the tools you are using and how to accomplish what you want.
 
-## Useful Resources
+<a name="dataset"></a>
 
-* [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
-* [Pandas Tutorials](https://pandas.pydata.org/pandas-docs/stable/tutorials.html)
-* [StackOverflow Pandas Questions](https://stackoverflow.com/questions/tagged/pandas)
-* [Awesome Public Data Sets](https://github.com/awesomedata/awesome-public-datasets)
-* [Kaggle Data Sets](https://www.kaggle.com/datasets)
+## Dataset
 
-## Project Feedback + Evaluation
+The data used in this project comes from a Kaggle set called [Shark Attack](https://www.kaggle.com/teajay/global-shark-attacks/version/1). The goal is to clean it up, prepare it to be analyzed, and then export it as a clean CSV data file.
 
-* __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
 
-* __Creativity__: Did you add a personal spin or creative element into your project submission? Did you incorporate domain knowledge or unique perspective into your analysis.
+<a name="workflow"></a>
 
-* __Code Quality__: Did you follow code style guidance and best practices covered in class?
+## Workflow
 
-* __Total__: Your instructors will give you a total score on your project between:
+The project follows three essential steps - `Inspection`, `Cleaning` and `Verifying` - in order to make it easy to keep track of changes and better structure the clean data set.
 
-    **Score**|**Expectations**
-    -----|-----
-    0|Does not meet expectations
-    1|Meets expectactions, good job!
-    2|Exceeds expectations, you wonderful creature, you!
+Before you begin, start by importing the table and the necessary libraries. Ready? Let's go!
 
-This will be useful as an overall gauge of whether you met the project goals, but __the more important scores are described in the specs above__, which can help you identify where to focus your efforts for the next project!
+### Step 1 - `INSPECTION`
+
+In the first step, we need to collect the data we will be cleaning and examine it for potential anomalies.
+
+To begin we need to:
+
+#### 1.1 Collect the data
+
+We need to read the csv file into a pandas dataframe
+
+- pd.read_csv
+
+#### 1.2 Take a look at the shape and features of the DataFrame 
+
+The following methods print information about the DataFrame including: the dimensionality, the index dtype and column dtypes, non-null values and memory usage.
+
+- sharks.shape
+- sharks.info
+- sharks.head
+
+#### 1.3 Check for NaN values across all columns in the table
+
+A quick way of isolating all the null values per column is using .isnull() and adding all the results per column:
+
+- sharks.isnull().sum()
+
+To get a clear picture of the NA per column, you can use a function that returns a new dataframe including the total number of NA values and the percentage of NA values in each column
+
+- percent_NA(data)
+
+### Step 2 - `CLEANING`
+
+After getting a better understanding of the data set, we can begin organising it and make it more understandable.
+
+#### 2.1 Column Names
+
+Using a function, it is possible to quickly remove all dots, whites spaces and aplies lower case.
+
+- def clean_col(data)
+
+#### 2.2 Drop Columns
+
+Depending on the focus of the analysis, there might be columns which are not so relevant. Using the .drop() command we are able to reduce the size of our table and narrow our results.
+
+- sharks = sharks.drop(to_drop, axis=1) #this updates our DF and deletes all the unecessary columns
+
+#### 2.3 Check for `Incorrect` and `Inconsistent` values in the table
+
+The value_counts() function is used to get a Series containing counts of unique values. The resulting object will be in descending order so the first element is the most frequently-occurring element. Excludes NA values by default.
+
+- column_check = sharks[i].value_counts()
+
+It is used a FOR loop to get an initial idea of the issues with the results. To get into more detail and structure the next steps with each column it is recommended to use `sharks[<column_name>].value_counts()` individually.
+
+
+#### 2.4 Deep Cleaning Time
+
+At this point, since the issues with the DF have been identified, it is now time to start tackling each one individually and update the results in our DF.
+
+- **date**: different lenghts and types of date formats
+- **year**: different lengths (<4 digits) and value 0
+- **type**: inconsistent with Provoked/Unprovoked
+- **country**: inconsistent with name of the country
+- **activity**: unexpected large strings instead of categories
+- **sex**: unexpected values besides M/F
+- **age**: unexpected values besides 2 or max 3 digits
+- **fatal**: inconsistent values with boolean logic (Y/N)
+
+
+#### 2.4.1 Collecting data from DATE to analyse attacks per month:
+
+1 - Create a new column MONTH using DATE and fill with NaN if month doesn't exist
+2 - Change column order so MONTH shows up next to DATE
+3 - Drop NaN values and clean the rows with issues
+
+#### 2.4.2 Clean the column SEX to analyse distribution of attacks per gender:
+
+1 - Define a function that will take all the values and check if they are 'M' or 'F', otherwise replace them as NaN
+2 - Use .apply() to update all values in SEX
+
+#### 2.4.3 Clean the column **AGE** to analyse **distribution of attacks per age**:
+
+1 - Define a function that will take all the values and replace them as 0 if they are not integers
+2 - Include a condition that will replace the existing AGE ranges for NaN values
+2 - Due to the amount of NaN values generated, it is recommended to create a new DF and conduct the analysis separately
+
+#### 2.4.4 Clean the column **FATAL** to analyse **fatality of the attacks**:
+
+1 - Define function will take all the values and check if they are 'Y'or 'N', otherwise replace them as NaN
+2 - Use .apply() to update all values in FATAL
+
+### Step 3 - `Verifying`
+
+After having organised and cleaned the data set, the last step is to inspect the results to verify correctness. 
+
+1 - Using the same method as in the beginning, check for shape, info and call a sample of the clean data set
+2 - In case you identify anomalies with the clean dataset, go back to Step 2 and look for the source of the such issue
+3 - After fixing the cause of the problem, export the clean dataset as a csv file
+
+
+<a name="results"></a>
+
+## Results
+
+- Clean sharks data set 
+
+
+## Deliverables
+
+- `main.ipynb` with your commands and code you've used to clean the dataset
+- `sharks_original.csv` containing the clean dataset
+- `sharks_clean.csv` containing the clean dataset
+
+
 
