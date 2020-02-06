@@ -58,10 +58,31 @@ The following deliverables should be pushed to your Github repo for this chapter
 ### Prepare your IDE
 
 * Download CSV
-* Rename it as Sharck_Attack
+* Rename it as Shark_Attack
 * Import the needed libraries
 * Import CSV 
 
+### Examine For Potential Issues
+* Used .shape and .head() to obtain an overview
+* Missing Values: Calculated the percentage of null values using .info and .isnull
+* .shape and .head() to get a general overview of the contents
+### Start Cleaning The Data
+* Drop columns with more than 50% null values
+* Drop rows that are still missing more than 33.33% values
+* Check On Similarly Named Columns
+** Drop rows with mistakes in href & href formula
+** Drop rows with mistakes in "Case" columns
+### Data manipulation
+* Reorder Columns
+* Rename Columns
+* Extreme Values And Outliers
+* Low Variance Columns
+* Duplicates removal
+* Data Type
+* Remove columns I won't use
+* Remove unknown years
+### Fix Countries
+### Fix Ages
 
 <a name="results"></a>
 
