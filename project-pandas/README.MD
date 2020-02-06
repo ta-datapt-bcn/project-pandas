@@ -27,8 +27,9 @@ Mar Lizana Atienza
 <b>1.3.2  Normalización y transformación de datos</b>
 
 1.3.2.1  Year
+1.3.2.2  Type
 
-1.3.2.2  Atributos del accidentado
+1.3.2.3  Atributos del accidentado
 
 Sex
 
@@ -36,7 +37,7 @@ Age
 
 Country
 
-1.3.2.3  Otros atributos
+1.3.2.4  Otros atributos
 
 <b>1.3.3 </b> Discretización
 
