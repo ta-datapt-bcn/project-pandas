@@ -57,39 +57,43 @@ The following deliverables should be pushed to your Github repo for this chapter
 
 ### Prepare your IDE
 
-* Download CSV
-* Rename it as Shark_Attack
-* Import the needed libraries
-* Import CSV 
+- Download CSV
+- Rename it as Shark_Attack
+- Import the needed libraries
+- Import CSV 
 
 ### Examine For Potential Issues
-* Used .shape and .head() to obtain an overview
-* Missing Values: Calculated the percentage of null values using .info and .isnull
-* .shape and .head() to get a general overview of the contents
+- Used .shape and .head() to obtain an overview
+- Missing Values: Calculated the percentage of null values using .info and .isnull
+- .shape and .head() to get a general overview of the contents
 ### Start Cleaning The Data
-* Drop columns with more than 50% null values
-* Drop rows that are still missing more than 33.33% values
-* Check On Similarly Named Columns
-** Drop rows with mistakes in href & href formula
-** Drop rows with mistakes in "Case" columns
+- Drop columns with more than 50% null values
+- Drop rows that are still missing more than 33.33% values
+- Check On Similarly Named Columns
+  - Dropped rows with mistakes (non identical values in the row) in href & href formula
+  - Dropped rows with mistakes (non identical values in the row) in "Case" columns
 ### Data manipulation
-* Reorder Columns
-* Rename Columns
-* Extreme Values And Outliers
-* Low Variance Columns
-* Duplicates removal
-* Data Type
-* Remove columns I won't use
-* Remove unknown years
+- Reorder Columns
+- Rename Columns
+- Extreme Values And Outliers
+- Low Variance Columns
+- Duplicates removal
+- Data Type
+- Remove columns I won't use
+- Remove unknown years
 ### Fix Countries
-### Fix Ages
-
+- Created a dictionary to clasify countries by hemisphere
+- Cleaned the data related to countries and sorted the values in Country alphabetically
+- Created an hemisphere column indicating in which hemisphere is each country
+### Seasons
+- Used months indicated in the dates and the hemispheres info to get the seasons when the incidents were reported
 <a name="results"></a>
 
 ## Results
 
+At first we got a 5992x24 dataframe but after the cleaning and a bit of manipulation is a 5798x10 dataframe. If I had more time I'd like to clean much more and do it more carfully as I dropped some data that might have been corrected replacing info and using RegEx.
 
-
+I feel that the oldest the information is the less precise it is and there were also more null values in those rows. It should be interesting to convert more columns data to numeric typs so as to makes some statistics analysis and decide properly on that since wich year we should keep the data and which variables should be dropped.
 
 
 
