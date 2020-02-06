@@ -151,7 +151,7 @@ After having organised and cleaned the data set, the last step is to inspect the
 
 ## Deliverables
 
-- `main.ipynb` with your commands and code you've used to clean the dataset
+- `main.ipynb` with the commands and code used to clean the dataset
 - `sharks_original.csv` containing the clean dataset
 - `sharks_clean.csv` containing the clean dataset
 
