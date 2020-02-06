@@ -86,14 +86,22 @@ The following deliverables should be pushed to your Github repo for this chapter
 - Cleaned the data related to countries and sorted the values in Country alphabetically
 - Created an hemisphere column indicating in which hemisphere is each country
 ### Seasons
-- Used months indicated in the dates and the hemispheres info to get the seasons when the incidents were reported
+- Used months indicated in the dates and the hemispheres info to get the seasons when the incidents were reported.
 <a name="results"></a>
 
 ## Results
 
-At first we got a 5992x24 dataframe but after the cleaning and a bit of manipulation is a 5798x10 dataframe. If I had more time I'd like to clean much more and do it more carfully as I dropped some data that might have been corrected replacing info and using RegEx.
+At first we got a 5992x24 dataframe but after the cleaning and a bit of manipulation is a 5798x9 dataframe. If I had more time I'd like to clean much more and do it more carfully as I dropped some data that might have been corrected replacing info and using RegEx.
 
 I feel that the oldest the information is the less precise it is and there were also more null values in those rows. It should be interesting to convert more columns data to numeric typs so as to makes some statistics analysis and decide properly on that since wich year we should keep the data and which variables should be dropped.
 
+
+# Bonus
+
+## Graphic representation of Country x Hemisphere x Season
+- Used plotly.express to visualize better the relationship between Country, Hemisphere and Season.
+- I decided to drop all data but what was registered from 1995.
+- There I found that some Dates were not cleaned propperly so I decided to restart this last part using creating and working on a new dataframe based on the one used during the whole project. In short, I dropped them.
+- This bonus started with the "clean" 5798x9 dataframe but ended up working on a new dataset of 2047x9.
 
 
