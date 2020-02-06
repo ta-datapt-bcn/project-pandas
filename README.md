@@ -40,7 +40,9 @@
 
 ### Pasos realizados con el Dataset
 - Primera Parte:
+
     - Elimino las columnas que no tienen informacion relevante.
+    - Elimino algunos duplicados
     - Corrijo el nombre de las columnas.
         - Algunas columnas contienen espacios y dificulta el acceso a ellas.
     - Cambio los valores 'Nan' to 'Unknown'.
@@ -51,12 +53,15 @@
         - Corrijo algunos datos erroneos con espacios.
         - Elimino los datos erroneos.
         - Cambio 'nan' por 'Unknow'.
+        
 - Segunda Parte:
+
     - Me quedo con los datos entre los años 2000 - 2016.
     - Modifico 'Date' en el formato dd-www-dd.
     - Añado una nueva columna con los meses a partir de la columna Date.
     - Añado una nueva columna con los dias a partir de la columna Date.
     - Ordeno  las columnas.
+    - Obtengo los paises con un mayor numero de ataques.
     - Creo nuevas columnas con las coordenadas en funcion de las coordenadas de los paises.
     - Exporto el csv para la visualizacion de los datos.
     - Dibujo los puntos de los ataques de tiburones en el mapa con Geogebra.
