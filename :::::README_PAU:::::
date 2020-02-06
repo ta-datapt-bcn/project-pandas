@@ -1,0 +1,42 @@
+# Project Pandas: índice de acciones realizadas:
+
+1. Importamos el archivo y hacemos una primera inspección del dataframe.
+
+2. Inspeccionamos los valores nulos de cada columna.
+
+3. Definimos drop_cols como las columnas con más de 3.000 registros nulos y eliminamos las columnas en drop_cols.
+
+4. Eliminamos columnas con información poco relevante o duplicada:
+    
+    - Date -> duplicada 
+    - Name -> poco relevante
+    - pdf -> duplicada
+    - href -> duplicada
+    - Case Number.1 -> duplicada
+    - Case Number.2 -> duplicada
+    - original order -> poco relevante
+    - Species  -> baja calidad
+    
+5. Limpiamos la columna Case Number.
+
+6. Visualizamos la distribución de los incidentes por años y eliminamos los registros con valores inferiores a 1890 para 'Year'.
+
+7. Observamos los valores de la columna 'Type' y unificamos las categorías 'Boat' y 'Boating'.
+
+8. Aplicamos mayúsculas a los valores del atributo 'Country' y eliminamos los espacios a principio y final del string.
+
+9. Eliminamos los espacios a principio y final del string de las columnas 'Area' y 'Location'.
+
+10. En la columna 'Sex', recategorizamos los valores singulares.
+
+11. En la columna 'Age', seleccionamos los dos primeros digítos de cada campo y descartamos el resto (se generan algunos errores como en el caso de registros con múltiples edades o registros con meses en lugar de años). Después, convertimos el atributo a numérico.
+
+12. En la columna 'FATAL (Y/N)', recategorizamos los valores singulares.
+
+13. Generamos la edad media por país y agregamos la columna al dataframe.
+
+14. Renombramos las columnas.
+
+15. Reordenamos las columnas (para juntar 'Age' y 'Avg age').
+
+16. Exportamos el dataset limpio como un archivo csv.
