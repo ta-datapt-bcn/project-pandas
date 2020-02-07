@@ -41,7 +41,11 @@ After our period of data cleaning, we ended up with a dataframe which was open t
 
 ## Results
 
-After our c
+Our insights after playing with the data:
+- You have more chances to get attacked by a Shark in the USA.
+- If you are a male.
+- You are 17.
+- It is totally unprovoked.
 
 
 
