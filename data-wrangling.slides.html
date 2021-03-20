@@ -14751,7 +14751,7 @@ memory usage: 4.7+ MB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">attacks</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;^\s*|\s*$&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">attacks</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">attacks</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">attacks</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="n">attacks</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">attacks</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15512,7 +15512,7 @@ Name: Type, dtype: int64</pre>
  &#39;Treading Water&#39;,
  &#39;Free Diving&#39;,
  &#39;Pearl Diving&#39;,
- &#39;Windsurfing&#39;]</pre>
+ &#39;Surf Skiing&#39;]</pre>
 </div>
 
 </div>
@@ -15704,8 +15704,8 @@ Name: Activity, dtype: int64</pre>
 F       624
 N         2
 M         2
-.         1
 lli       1
+.         1
 Name: Sex, dtype: int64</pre>
 </div>
 
@@ -15775,10 +15775,10 @@ Name: Sex, dtype: int64</pre>
 Y          1324
 UNKNOWN      64
  N            7
-N             1
-y             1
 M             1
+N             1
 2017          1
+y             1
 Name: Fatal (Y/N), dtype: int64</pre>
 </div>
 
@@ -15884,7 +15884,7 @@ Name: Fatal (Y/N), dtype: int64</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">attacks</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">attacks</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">attacks</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16078,114 +16078,6 @@ Name: Fatal (Y/N), dtype: int64</pre>
       <td>M</td>
       <td>N</td>
       <td>Reef Shark</td>
-    </tr>
-    <tr>
-      <th>USA</th>
-      <td>2018-05-21</td>
-      <td>2018</td>
-      <td>Unprovoked</td>
-      <td>South Carolina</td>
-      <td>Isle of Palms,Charleston County</td>
-      <td>Boogie Boarding</td>
-      <td>M</td>
-      <td>N</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>USA</th>
-      <td>2018-05-13</td>
-      <td>2018</td>
-      <td>Unprovoked</td>
-      <td>South Carolina</td>
-      <td>Hilton Head Island, Beaufort County</td>
-      <td>Swimming</td>
-      <td>M</td>
-      <td>N</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>England</th>
-      <td>2018-05-13</td>
-      <td>2018</td>
-      <td>Invalid</td>
-      <td>Cornwall</td>
-      <td>Off Land's End</td>
-      <td>Fishing</td>
-      <td>M</td>
-      <td>N</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>Australia</th>
-      <td>2018-05-01</td>
-      <td>2018</td>
-      <td>Provoked</td>
-      <td>Westerm Australia</td>
-      <td>Dugong Bay</td>
-      <td>Unknown</td>
-      <td>F</td>
-      <td>N</td>
-      <td>Nurse Shark</td>
-    </tr>
-    <tr>
-      <th>Africa</th>
-      <td>2018-05-12</td>
-      <td>2018</td>
-      <td>Unprovoked</td>
-      <td>Eastern Cape Province</td>
-      <td>Nahoon Beach, East London</td>
-      <td>Surfing</td>
-      <td>M</td>
-      <td>N</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>Australia</th>
-      <td>2018-05-09</td>
-      <td>2018</td>
-      <td>Unknown</td>
-      <td>New South Wales</td>
-      <td>Sharpes Beach, Ballina</td>
-      <td>Surfing</td>
-      <td>M</td>
-      <td>N</td>
-      <td>Shark</td>
-    </tr>
-    <tr>
-      <th>Thailand</th>
-      <td>2018-04-30</td>
-      <td>2018</td>
-      <td>Unprovoked</td>
-      <td>Hua Hin</td>
-      <td>Sai Noi Beach</td>
-      <td>Swimming</td>
-      <td>M</td>
-      <td>N</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>Costa Rica</th>
-      <td>2018-04-28</td>
-      <td>2018</td>
-      <td>Unprovoked</td>
-      <td>Cocos Island</td>
-      <td>Manuelita</td>
-      <td>Scuba Diving</td>
-      <td>M</td>
-      <td>N</td>
-      <td>Tiger Shark</td>
-    </tr>
-    <tr>
-      <th>Australia</th>
-      <td>2018-04-28</td>
-      <td>2018</td>
-      <td>Unprovoked</td>
-      <td>Western Australia</td>
-      <td>Gearys Beach</td>
-      <td>Surfing</td>
-      <td>M</td>
-      <td>N</td>
-      <td></td>
     </tr>
   </tbody>
 </table>
