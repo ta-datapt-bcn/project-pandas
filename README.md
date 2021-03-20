@@ -4,6 +4,5 @@
 
 Xabi López, DAPT - Feb2021
 
-Steps 
-
+Steps followed:
 ![image](https://user-images.githubusercontent.com/77535061/111871859-8c777d80-898c-11eb-807e-9a3fa2f96939.png)
